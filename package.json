@@ -1,0 +1,14 @@
+{
+  "name": "l26.p.c3.netflix",
+  "version": "1.0.0",
+  "description": "sorry, Im test this",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+  
+}
