@@ -4,21 +4,97 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Agencia de Netflix - Bootstrap</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
+  <style>
+
+    :root {
+            --bg-light: #f8fafc;
+            --brand-dark: #0f172a;
+            --text-dark: #1e293b;
+            --brand-blue: #2563eb;
+            --border: #e2e8f0;
+
+    }
+
+    body {
+          background-color: var(--bg-light); 
+          color: var(--text-dark);
+          font-family: 'Inter', sans-serif;
+    }
+
+    .btn-add {
+            background-color: var(--brand-blue);
+            color: rgb(245, 235, 235);
+            border: none;
+            border-radius: 8px;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            transition: 0.2s ease;
+    }
+
+    .btn-add:hover {
+    background-color: #1e40af; 
+    color: white;
+}
+
+    .form-control, .form-select {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 0.7rem;
+            font-size: 0.95rem;
+        }
+
+  </style>
 <div id="app-bootstrap" class="container mt-5">
-    <h2 class="mb-3">Control de Suscriptores</h2>
 
-    <button type="button" class="btn btn-primary mb-3" id="body_btNuevoSuscriptor">+Agregar Suscriptor</button>
 
-    <div class="alert alert-info shadow-sm">
-<h5 class="mb-3">Reporte</h5>
+    <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="mb-0">Control de Suscriptores</h2>
+    <button type="button" class="btn btn-add" id="body_btNuevoSuscriptor">+Agregar Suscriptor</button>
+</div>
 
-    Porcentaje de suscriptores que no pagaran servicio de conexion: <span id="body_lblPorcentajeNoConexion" class="fw-bold">0%</span><br>
-    Plan favorito: <span id="body_lblPlanFavorito" class="fw-bold">0</span><br>
-
+    <div class="row g-3 mb-4">
+    <!-- Tarjeta: Porcentaje sin conexión -->
+    <div class="col-md-6">
+        <div class="card border-0 shadow-sm rounded-4 h-100">
+            <div class="card-body">
+                <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0">
+                        <div class="bg-light rounded-circle p-3">
+                            
+                        </div>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <h6 class="text-muted mb-1">Suscriptores sin servicio de conexión</h6>
+                        <h2 class="mb-0 fw-bold" id="body_lblPorcentajeNoConexion">0%</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <!-- Tarjeta: Plan favorito -->
+    <div class="col-md-6">
+        <div class="card border-0 shadow-sm rounded-4 h-100">
+            <div class="card-body">
+                <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0">
+                        <div class="bg-light rounded-circle p-3">
+                            
+                        </div>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <h6 class="text-muted mb-1">Plan favorito</h6>
+                        <h2 class="mb-0 fw-bold" id="body_lblPlanFavorito">-</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
     <div class="mt-4">
     <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
