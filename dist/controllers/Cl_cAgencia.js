@@ -1,3 +1,15 @@
+/**NETFLIX
+ * Una agencia vende planes de Netflix (A: para 1TV, B: para 2TVs, C: para 5TVs) asi
+ * A = suscripcion $3
+ * B = suscripcion $5
+ * C = suscripcion $10
+ * ademas el suscriptor debe pagar un 10% adicional del valor de la suscripcion
+ * por servicio de conexion (menos el plan , que ya lo incluye). En este sentido se
+ * desea conocer:
+ * a. Precio a pagar por cada suscriptor
+ * b. Porcentaje de suscriptores que no pagaran servicio de conexion
+ * c. Plan favorito
+ */
 import Cl_mAgencia from "../models/Cl_mAgencia.js";
 export default class Cl_cAgencia {
     mAgencia = new Cl_mAgencia();

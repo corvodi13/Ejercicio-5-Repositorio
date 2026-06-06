@@ -1,4 +1,5 @@
 export default class Cl_mSuscriptor{
+    protected tabla: string = "suscriptor";
     protected _cedula: string;
     protected _planes: string;
 
@@ -33,12 +34,19 @@ export default class Cl_mSuscriptor{
                 total += precios[plan];
             }
         }
-        // Aplicar 10% adicional si tiene plan A o B (o ambos)
+        // Aplica 10% adicional si tiene plan A o B (o ambos)
         const tieneA = listaPlanes.some(p => p.trim().toUpperCase() === 'A');
         const tieneB = listaPlanes.some(p => p.trim().toUpperCase() === 'B');
         if (tieneA || tieneB) {
-            total *= 1.10; // 10% extra sobre el total
+            total *= 1.10; 
         }
         return total;
+    }
+    toJSON(){
+        return {
+            tabla: this.tabla,
+            cedula: this.cedula,
+            planes: this.planes,
+        };
     }
 }

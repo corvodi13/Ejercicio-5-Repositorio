@@ -1,5 +1,8 @@
 import Cl_mSuscriptor from "../models/Cl_mSuscriptor.js";
+import Cl_sSuscriptor from "../services/Cl_sSuscriptor.js";
+import Cl_vModal from "../views/Cl_vModal.js";
 export default class Cl_cSuscriptor {
+    modal = new Cl_vModal();
     vista;
     callback;
     constructor(vista) {
@@ -17,9 +20,12 @@ export default class Cl_cSuscriptor {
         this.callback(null);
         this.vista.ocultar();
     }
-    btAceptarOnClick() {
-        this.callback(new Cl_mSuscriptor(this.vista.cedula, this.vista.planes));
+    async btAceptarOnClick() {
+        const suscriptor = new Cl_mSuscriptor(this.vista.cedula, this.vista.planes);
+        this.callback(suscriptor);
         this.vista.ocultar();
+        const resultado = await Cl_sSuscriptor.agregar(suscriptor);
+        this.modal.mostrar(resultado.mensaje);
     }
 }
 //# sourceMappingURL=Cl_cSuscriptor.js.map
